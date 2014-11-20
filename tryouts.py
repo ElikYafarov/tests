@@ -1,6 +1,5 @@
 import random
-
-list_of = []
+list_of = [None]
 greeting = '\nWelcome to auto-dash-length test.\n \'0\' - back to menu'
 
 
@@ -16,6 +15,7 @@ def length_test():
 	start()
 
 def list_test():
+	global list_of
 	choice = None
 	while choice != '0':
 		print '\n\t0 - exit'
@@ -29,17 +29,14 @@ def list_test():
 		print '\t8 - clear the list'
 		print '\tq - back to main menu\n'
 		choice = raw_input('Select number.\n\n>>')
-
 		if choice == '1':
 			try:
 				number = int(raw_input('Type the number you want to add.\n'))
 				list_of.append(number)
 			except:
-				print 'Numbers have to be used.'
-
+				print '\nUse integers.'
 		elif choice == '2':
 			print list_of[:]
-
 		elif choice == '3':
 			number = int(raw_input('Type the number you want to delete.\n'))
 			if number in list_of:
